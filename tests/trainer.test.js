@@ -27,7 +27,20 @@ describe("Trainer", () => {
           strength: ["grass"],
         });
       });
+      it("Checks that the catch method cant add more pokemon than the maximum size", () => {
+        const ash = new Trainer("Ash");
+        ash.catch(theOriginals[0]);
+        ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+          ash.catch(theOriginals[0]);
+        expect(ash.storage.length).toBe(6);
+      });
     });
   });
 });
-
