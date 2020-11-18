@@ -11,4 +11,8 @@ class Pokemon {
     };
 };
 
-module.exports = { Pokemon }
+
+const charmander = new Pokemon("Charmander", 100, 20 , "char char", "flamethrower", "fire");
+
+
+module.exports = { Pokemon , charmander}
