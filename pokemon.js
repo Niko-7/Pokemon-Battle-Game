@@ -21,7 +21,7 @@ class Pokemon {
         break;
 
       case "water":
-        this.strength.push("fire", "ground");
+        this.strength.push("fire");
         break;
 
       case "grass":
@@ -36,7 +36,7 @@ class Pokemon {
         break;
 
       case "water":
-        this.weakness.push("electric");
+        this.weakness.push("grass");
         break;
 
       case "grass":
@@ -70,5 +70,46 @@ const squirtle = new Pokemon(
   "water gun",
   "water"
 );
+charmander.addStrength();
+charmander.addWeakness();
+squirtle.addStrength();
+squirtle.addWeakness();
+bulbasaur.addStrength();
+bulbasaur.addWeakness();
 
-module.exports = { Pokemon, charmander, bulbasaur, squirtle };
+const theOriginals = [charmander , bulbasaur, squirtle]
+
+const chikorita = new Pokemon(
+  "chikorita",
+  100,
+  15,
+  "chiko",
+  "leaf slap",
+  "grass"
+);
+const cyndaquil = new Pokemon(
+  "cyndaquil",
+  100,
+  15,
+  "cyndaaa",
+  "flame blast",
+  "fire"
+);
+const totodile = new Pokemon(
+  "totodile",
+  100,
+  15,
+  "tot tot",
+  "water spray",
+  "water"
+);
+chikorita.addStrength();
+chikorita.addWeakness();
+totodile.addStrength();
+totodile.addWeakness();
+cyndaquil.addStrength();
+cyndaquil.addWeakness();
+
+const genTwo = [chikorita, cyndaquil, totodile];
+
+module.exports = { Pokemon , charmander, theOriginals}

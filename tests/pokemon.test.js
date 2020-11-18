@@ -1,4 +1,4 @@
-const { Pokemon, charmander } = require("../pokemon");
+const { Pokemon, charmander, theOriginals } = require("../pokemon");
 
 describe("Pokemon", () => {
   describe("Pokemon instances", () => {
@@ -28,9 +28,9 @@ describe("Pokemon", () => {
         move: "flamethrower",
         name: "charmander",
         sound: "char char",
-        strength: [],
+        strength: ["grass"],
         type: "fire",
-        weakness: [],
+        weakness: ["water"],
       });
     });
   });
@@ -39,7 +39,7 @@ describe("Pokemon", () => {
       expect(charmander.talk()).toEqual("char char");
     });
   });
-  describe("strengths and weaknesses", () => {
+  describe("Strengths and weaknesses", () => {
     it("sets the appropriate strength to the pokemon depending on its element", () => {
       const testCharmander = new Pokemon(
         "Charmander",
@@ -65,5 +65,38 @@ describe("Pokemon", () => {
       expect(testCharmander.weakness).toEqual(["water"]);
     });
   });
-  });
+    describe("Teams", () => {
+        it("Checks that the passed team in the right format", () => {
+            const expected =
+             [  {
+        name: 'charmander',
+        hp: 100,
+        attack: 20,
+        sound: 'char char',
+        move: 'flamethrower',
+        type: 'fire',
+        weakness: [ 'water' ],
+        strength: [ 'grass' ] },
+       {
+        name: 'bulbasaur',
+        hp: 100,
+        attack: 20,
+        sound: 'bulba',
+        move: 'vine whip',
+        type: 'grass',
+        weakness: [ 'fire' ],
+        strength: [ 'water' ] },
+       {
+        name: 'squirtle',
+        hp: 100,
+        attack: 20,
+        sound: 'squi squi',
+        move: 'water gun',
+        type: 'water',
+        weakness: [ "grass"],
+        strength: ['fire'] } ]
+            expect(theOriginals).toEqual(expected)
+      })
+  })
+});
  
