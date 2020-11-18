@@ -112,4 +112,36 @@ cyndaquil.addWeakness();
 
 const genTwo = [chikorita, cyndaquil, totodile];
 
-module.exports = { Pokemon , charmander, theOriginals, genTwo}
+const charizard = new Pokemon(
+  "charizard",
+  150,
+  5,
+  "pew pew",
+  "fire pew",
+  "fire"
+);
+const tortoise = new Pokemon(
+  "tortoise",
+  150,
+  5,
+  "excuse me but turtles dont speak",
+  "wet spoon",
+  "water"
+);
+const venusaur = new Pokemon(
+  "venusaur",
+  150,
+  5,
+  "oi mate wanna go for a pint after the fight?",
+  "whip da whip",
+  "grass"
+);
+venusaur.addStrength();
+venusaur.addWeakness();
+tortoise.addStrength();
+tortoise.addWeakness();
+charizard.addStrength();
+charizard.addWeakness();
+
+const tooOp = [venusaur, tortoise, charizard]
+module.exports = { Pokemon , charmander, theOriginals, genTwo, tooOp}
