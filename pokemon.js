@@ -13,10 +13,46 @@ class Pokemon {
   talk() {
     return this.sound;
   }
-};
 
+  addStrength() {
+    switch (this.type) {
+      case "fire":
+        this.strength.push("grass");
+        break;
 
-const charmander = new Pokemon("charmander", 100, 20 , "char char", "flamethrower", "fire");
+      case "water":
+        this.strength.push("fire", "ground");
+        break;
 
+      case "grass":
+        this.strength.push("water");
+        break;
+    }
+  }
+  addWeakness() {
+    switch (this.type) {
+      case "fire":
+        this.weakness.push("water");
+        break;
 
-module.exports = { Pokemon , charmander}
+      case "water":
+        this.weakness.push("electric");
+        break;
+
+      case "grass":
+        this.weakness.push("fire");
+        break;
+    }
+  }
+}
+
+const charmander = new Pokemon(
+  "charmander",
+  100,
+  20,
+  "char char",
+  "flamethrower",
+  "fire"
+);
+
+module.exports = { Pokemon, charmander };

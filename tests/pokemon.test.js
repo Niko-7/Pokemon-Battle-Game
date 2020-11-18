@@ -35,8 +35,35 @@ describe("Pokemon", () => {
     });
   });
   describe("Pokemon methods", () => {
-      it("Checks that the talk method returns the pokemons sound", () => {
-        expect(charmander.talk()).toEqual("char char")
+    it("Checks that the talk method returns the pokemons sound", () => {
+      expect(charmander.talk()).toEqual("char char");
     });
   });
-});
+  describe("strengths and weaknesses", () => {
+    it("sets the appropriate strength to the pokemon depending on its element", () => {
+      const testCharmander = new Pokemon(
+        "Charmander",
+        100,
+        20,
+        "char char",
+        "flamethrower",
+        "fire"
+      );
+      testCharmander.addStrength();
+      expect(testCharmander.strength).toEqual(["grass"]);
+    });
+    it("sets the appropriate weakness to the pokemon depending on its element", () => {
+      const testCharmander = new Pokemon(
+        "Charmander",
+        100,
+        20,
+        "char char",
+        "flamethrower",
+        "fire"
+      );
+      testCharmander.addWeakness();
+      expect(testCharmander.weakness).toEqual(["water"]);
+    });
+  });
+  });
+ 
