@@ -145,4 +145,38 @@ charizard.addWeakness();
 
 const tooOp = [venusaur, tortoise, charizard]
 
-module.exports = { Pokemon , charmander, theOriginals, genTwo, tooOp}
+const meowth =  new Pokemon(
+  "meowth",
+  70,
+  5,
+  "the devs are never fair to us :((((",
+  "scratch that scratch",
+);
+const wobbuffet =  new Pokemon(
+  "wobbuffet",
+  70,
+  5,
+  "hhhhhhh",
+  "accidental slap",
+);
+
+const teamRocket = [meowth, wobbuffet]
+
+const mewtwo = new Pokemon(
+  "mewtwo",
+  9999,
+  20,
+  "....",
+  "mind blast"
+);
+
+const theUnbeatable = [mewtwo]
+module.exports = {
+  Pokemon,
+  charmander,
+  theOriginals,
+  genTwo,
+  tooOp,
+  teamRocket,
+  theUnbeatable,
+};

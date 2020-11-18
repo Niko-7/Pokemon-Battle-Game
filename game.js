@@ -1,6 +1,12 @@
 const inquirer = require("./node_modules/inquirer/lib/inquirer.js");
 const Battle = require("./battle");
-const { theOriginals, genTwo, tooOp } = require("./pokemon");
+const {
+  theOriginals,
+  genTwo,
+  tooOp,
+  teamRocket,
+  theUnbeatable,
+} = require("./pokemon");
 const Trainer = require("./trainer");
 
 console.log("Welcome to the world of Pokemon!");
@@ -24,7 +30,7 @@ const questions = [
     message: "Pick your team",
     choices: [
       "the originals (Charmander, Squirtle, Bulbasaur)",
-        "generation two (chikorita, cyndaquil, totodile)",
+      "generation two (chikorita, cyndaquil, totodile)",
     ],
   },
 
@@ -32,7 +38,7 @@ const questions = [
     type: "list",
     name: "enemy",
     message: "Are you ready to battle?",
-    choices: ["Brock"],
+    choices: ["Brock", "Team Rocket", "The Unbeatable"],
   },
 
   {
@@ -86,7 +92,14 @@ inquirer.prompt(questions).then((answers) => {
     enemy.catch(tooOp[1]);
     enemy.catch(tooOp[2]);
   }
-    
+
+     if (enemy.name === "Team Rocket") {
+       enemy.catch(teamRocket[0]);
+       enemy.catch(teamRocket[1]);
+     }
+    if (enemy.name === "The Unbeatable") {
+      enemy.catch(theUnbeatable[0]);
+    }
 
   newBattle = new Battle(player, enemy, player.storage[0], enemy.storage[0]);
 
