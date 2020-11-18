@@ -22,7 +22,10 @@ const questions = [
     type: "list",
     name: "team",
     message: "Pick your team",
-    choices: ["the originals (Charmander, Squirtle, Bulbasaur)"],
+    choices: [
+      "the originals (Charmander, Squirtle, Bulbasaur)",
+        "generation two (chikorita, cyndaquil, totodile)",
+    ],
   },
 
   {
@@ -72,23 +75,22 @@ inquirer.prompt(questions).then((answers) => {
     player.catch(theOriginals[1]);
     player.catch(theOriginals[2]);
   }
+    if (answers.team.includes("generation two")) {
+      player.catch(genTwo[0]);
+      player.catch(genTwo[1]);
+      player.catch(genTwo[2]);
+    }
 
   if (enemy.name === "Brock") {
     enemy.catch(tooOp[0]);
     enemy.catch(tooOp[1]);
     enemy.catch(tooOp[2]);
   }
+    
 
-  newBattle = new Battle(
-    player,
-    enemy,
-    player.storage[0],
-    enemy.storage[0]
-  );
+  newBattle = new Battle(player, enemy, player.storage[0], enemy.storage[0]);
 
-  console.log(
-    `New battle started between ${player.name} and ${enemy.name}!`
-  );
+  console.log(`New battle started between ${player.name} and ${enemy.name}!`);
 
   takeTurn();
 });

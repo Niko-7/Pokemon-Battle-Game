@@ -144,4 +144,5 @@ charizard.addStrength();
 charizard.addWeakness();
 
 const tooOp = [venusaur, tortoise, charizard]
+
 module.exports = { Pokemon , charmander, theOriginals, genTwo, tooOp}

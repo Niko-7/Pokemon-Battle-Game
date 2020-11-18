@@ -15,7 +15,7 @@ class Battle {
     ) {
       if (this.turn % 2 !== 0) {
         console.log(
-          `It's ${this.player.name}'s turn! Go!! ${this.myPokemon.name}!`
+          `It's ${this.player.name}'s turn!Go!! ${this.myPokemon.name}!`
         );
         console.log(this.myPokemon.talk());
 
@@ -25,18 +25,17 @@ class Battle {
           console.log(
             `${this.myPokemon.name} used ${
               this.myPokemon.move
-            }, it's super effective! ${this.myPokemon.name}'s attack did ${
+            }, it's super effective!  ${this.myPokemon.name}'s attack did ${
               this.myPokemon.attack * 1.25
-            } damage! ${this.enemyPokemon.name} has ${this.enemyPokemon.hp} hp left!\n`
+            } damage! ${this.enemyPokemon.name} has ${
+              this.enemyPokemon.hp
+            } hp left!`
           );
-
-          
         } else if (this.myPokemon.weakness[0] === this.enemyPokemon.type) {
           this.enemyPokemon.hp -= this.myPokemon.attack * 0.75;
           console.log(
             `${this.myPokemon.name} used ${this.myPokemon.move}, it's not very effective. ${this.enemyPokemon.name} has ${this.enemyPokemon.hp} hp left!`
           );
-
         } else {
           this.enemyPokemon.hp -= this.myPokemon.attack;
           console.log(
@@ -45,7 +44,6 @@ class Battle {
         }
       }
 
-     
       if (this.turn % 2 === 0) {
         console.log(
           `It's ${this.enemy.name}'s turn! Go ${this.enemyPokemon.name}!`
@@ -57,18 +55,17 @@ class Battle {
           console.log(
             `${this.enemyPokemon.name} used ${
               this.enemyPokemon.move
-            }, it's super effective! ${this.enemyPokemon.name}'s attack did ${
-              this.enemyPokemon.attack * 1.25
-            } damage! ${this.myPokemon.name} has ${this.myPokemon.hp} hp left!`
+            }, it's super effective!  ${
+              this.enemyPokemon.name
+            }'s attack did ${this.enemyPokemon.attack * 1.25} damage!  ${
+              this.myPokemon.name
+            } has ${this.myPokemon.hp} hp left!`
           );
-
- 
         } else if (this.enemyPokemon.weakness[0] === this.myPokemon.type) {
           this.myPokemon.hp -= this.enemyPokemon.attack * 0.75;
           console.log(
             `${this.enemyPokemon.name} used ${this.enemyPokemon.move}, it's not very effective. ${this.myPokemon.name} has ${this.myPokemon.hp} hp left!`
           );
-
         } else {
           this.myPokemon.hp -= this.enemyPokemon.attack;
           console.log(
@@ -77,12 +74,11 @@ class Battle {
         }
       }
 
-      this.turn++; 
+      this.turn++;
 
       if (this.myPokemon.hp <= 0) {
         console.log(`${this.myPokemon.name} has fainted!`);
 
-        
         if (this.player.storage.some((pokemon) => pokemon.hp > 0)) {
           console.log(`${this.player.name}, bring out your next pokemon!`);
 
@@ -99,7 +95,6 @@ class Battle {
       if (this.enemyPokemon.hp <= 0) {
         console.log(`${this.enemyPokemon.name} has fainted!`);
 
-        
         if (this.enemy.storage.some((pokemon) => pokemon.hp > 0)) {
           console.log(`${this.enemy.name}, bring out your next pokemon!`);
 
@@ -108,7 +103,7 @@ class Battle {
           ];
           console.log(`${this.enemyPokemon.name}, I choose you!`);
         } else {
-          console.log(`\n${this.player.name} is the winner!`);
+          console.log(`${this.player.name} is the winner!`);
           this.winner = true;
         }
       }
