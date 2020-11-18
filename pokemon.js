@@ -112,4 +112,4 @@ cyndaquil.addWeakness();
 
 const genTwo = [chikorita, cyndaquil, totodile];
 
-module.exports = { Pokemon , charmander, theOriginals}
+module.exports = { Pokemon , charmander, theOriginals, genTwo}
