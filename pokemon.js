@@ -54,5 +54,21 @@ const charmander = new Pokemon(
   "flamethrower",
   "fire"
 );
+const bulbasaur = new Pokemon(
+  "bulbasaur",
+  100,
+  20,
+  "bulba",
+  "vine whip",
+  "grass"
+);
+const squirtle = new Pokemon(
+  "squirtle",
+  100,
+  20,
+  "squi squi",
+  "water gun",
+  "water"
+);
 
-module.exports = { Pokemon, charmander };
+module.exports = { Pokemon, charmander, bulbasaur, squirtle };
